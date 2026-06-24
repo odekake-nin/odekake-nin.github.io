@@ -843,30 +843,30 @@
     }
 
     .about-proof-line {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
       max-width: 650px;
+      padding: 10px;
       overflow: hidden;
-      border: 1px solid rgba(15,143,95,0.14);
-      border-radius: 8px;
-      background: rgba(15,143,95,0.14);
-      box-shadow: 0 18px 44px rgba(23,32,51,0.06);
+      border-radius: 99px;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(15,143,95,0.13);
+      box-shadow: 0 18px 44px rgba(23,32,51,0.05);
     }
 
     .proof-pill {
-      display: flex;
-      min-height: 86px;
-      flex-direction: column;
-      justify-content: center;
-      gap: 6px;
-      padding: 18px 20px;
-      background: rgba(255,255,255,0.9);
+      display: inline-flex;
+      align-items: center;
+      min-height: 48px;
+      gap: 8px;
+      padding: 0 16px;
+      background: transparent;
     }
 
     .proof-pill strong {
       color: var(--accent);
-      font-size: 1.8rem;
+      font-size: 1.45rem;
       font-weight: 900;
       line-height: 1;
       letter-spacing: 0;
@@ -881,6 +881,7 @@
 
     .proof-pill.is-icons {
       gap: 12px;
+      border-left: 1px solid rgba(15,143,95,0.12);
     }
 
     .video-side {
@@ -1038,12 +1039,12 @@
     .video-caption-stats span {
       display: grid;
       gap: 2px;
-      padding: 11px 10px;
+      padding: 12px 10px;
       border-radius: 8px;
       background: rgba(15,143,95,0.08);
       border: 1px solid rgba(15,143,95,0.12);
       color: var(--accent);
-      font-size: 1rem;
+      font-size: 0.96rem;
       font-weight: 900;
       line-height: 1.2;
     }
@@ -2301,8 +2302,9 @@
       .about-channel { padding: 32px 24px 68px; }
       .about-panel { grid-template-columns: 1fr; padding: 26px 22px; gap: 30px; }
       .about-panel::before { left: 22px; right: 22px; }
-      .about-proof-line { grid-template-columns: 1fr; }
-      .proof-pill { min-height: auto; padding: 16px; }
+      .about-proof-line { display: grid; grid-template-columns: 1fr; border-radius: 8px; padding: 0; gap: 0; }
+      .proof-pill { min-height: auto; padding: 16px; justify-content: center; }
+      .proof-pill.is-icons { border-left: none; border-top: 1px solid rgba(15,143,95,0.12); }
       .video-side { width: min(300px, 100%); }
       .video-kicker b { font-size: 2.3rem; }
       .video-embed { width: min(280px, 100%); aspect-ratio: 9 / 16; }
@@ -2506,9 +2508,9 @@
         <div class="video-caption-card">
           <strong>行かないと一生後悔する！神奈川の怪物級に美味いラーメン店7選</strong>
           <div class="video-caption-stats">
-            <span data-platform="Instagram">153万</span>
-            <span data-platform="TikTok">71万</span>
-            <span data-platform="YouTube">401万</span>
+            <span data-platform="Instagram">153万再生</span>
+            <span data-platform="TikTok">71万再生</span>
+            <span data-platform="YouTube">401万再生</span>
           </div>
         </div>
       </div>
