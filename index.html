@@ -686,6 +686,186 @@
       border-radius: 99px;
     }
 
+    /* ── About channel ── */
+    .about-channel {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 42px 40px 104px;
+      position: relative;
+    }
+
+    .about-panel {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 40px;
+      align-items: center;
+      padding: 34px;
+      border: 1px solid rgba(15,143,95,0.14);
+      border-radius: 8px;
+      background:
+        radial-gradient(circle at 16% 12%, rgba(32,181,119,0.12), transparent 30%),
+        linear-gradient(135deg, #fff 0%, #f4fbf7 52%, #eef5ff 100%);
+      box-shadow: 0 28px 88px rgba(23,32,51,0.09);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-panel::before {
+      content: '';
+      position: absolute;
+      left: 34px;
+      right: 34px;
+      top: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), #7adf9d, transparent);
+    }
+
+    .about-copy {
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-copy .section-sub {
+      margin-bottom: 24px;
+    }
+
+    .about-avatar {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 9px 14px 9px 9px;
+      margin-bottom: 20px;
+      border-radius: 99px;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(15,143,95,0.14);
+      box-shadow: 0 14px 38px rgba(23,32,51,0.08);
+    }
+
+    .about-avatar img {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #fff;
+    }
+
+    .about-avatar strong {
+      color: var(--navy);
+      font-size: 0.86rem;
+      line-height: 1.2;
+    }
+
+    .about-avatar span {
+      display: block;
+      margin-top: 2px;
+      color: var(--subtle);
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .format-switch {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: rgba(15,143,95,0.14);
+      border: 1px solid rgba(15,143,95,0.14);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .format-item {
+      background: rgba(255,255,255,0.88);
+      padding: 18px 18px 16px;
+    }
+
+    .format-item b {
+      display: block;
+      color: var(--accent);
+      font-size: 2.05rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .format-item strong {
+      display: block;
+      color: var(--navy);
+      font-size: 0.92rem;
+      margin-bottom: 5px;
+    }
+
+    .format-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.74rem;
+      line-height: 1.65;
+    }
+
+    .video-embed {
+      position: relative;
+      z-index: 1;
+      aspect-ratio: 16 / 9;
+      border-radius: 8px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(5,10,18,0.06), rgba(5,10,18,0.42)),
+        linear-gradient(135deg, #0f8f5f, #111827 68%);
+      box-shadow: 0 28px 70px rgba(23,32,51,0.18);
+      border: 1px solid rgba(255,255,255,0.44);
+    }
+
+    .video-embed::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 28% 32%, rgba(255,255,255,0.22), transparent 28%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0 1px, transparent 1px 46px);
+    }
+
+    .video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #fff;
+      padding: 28px;
+    }
+
+    .play-mark {
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      display: inline-grid;
+      place-items: center;
+      margin: 0 auto 18px;
+      background: rgba(255,255,255,0.94);
+      box-shadow: 0 18px 42px rgba(0,0,0,0.22);
+    }
+
+    .play-mark::before {
+      content: '';
+      margin-left: 5px;
+      border-top: 13px solid transparent;
+      border-bottom: 13px solid transparent;
+      border-left: 20px solid var(--accent);
+    }
+
+    .video-placeholder strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .video-placeholder span {
+      display: block;
+      color: rgba(255,255,255,0.72);
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
     /* ── Platform cards ── */
     .platform-grid {
       display: grid;
@@ -1817,6 +1997,10 @@
       .stat-item::after { display: none; }
       .stat-item:nth-child(odd) { border-right: 1px solid var(--line); }
       .stat-item:nth-last-child(-n+2) { border-bottom: none; }
+      .about-channel { padding: 32px 24px 68px; }
+      .about-panel { grid-template-columns: 1fr; padding: 24px; gap: 26px; }
+      .format-switch { grid-template-columns: 1fr; }
+      .video-embed { aspect-ratio: 4 / 5; }
       .section { padding: 68px 24px; }
       .platform-grid { grid-template-columns: 1fr; gap: 14px; }
       .process-band { grid-template-columns: 1fr; padding: 24px; gap: 22px; }
@@ -1963,6 +2147,45 @@
         <div class="stat-num">3,810万</div>
         <div class="stat-label">YouTube総再生回数</div>
         <div class="stat-platform">累計</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 必殺おでかけ人について -->
+  <div class="about-channel reveal">
+    <div class="about-panel">
+      <div class="about-copy">
+        <div class="about-avatar">
+          <img src="assets/odesake-icon.jpeg" alt="">
+          <div>
+            <strong>必殺おでかけ人</strong>
+            <span>ODEKAKE MEDIA</span>
+          </div>
+        </div>
+        <div class="section-label">ABOUT</div>
+        <div class="section-title">「行ってみたい」を作る<br>お出かけメディア</div>
+        <div class="section-sub">飲食店・ホテル・お出かけスポットを、見た人が保存したくなるショート動画で紹介。普段は「7選」形式で街の魅力をまとめ、PRではより伝わりやすい「5選」形式でお店の強みを届けます。</div>
+        <div class="format-switch">
+          <div class="format-item">
+            <b>7</b>
+            <strong>通常投稿</strong>
+            <span>普段はお出かけ先を7選形式で紹介。保存・比較されやすい構成で認知を広げます。</span>
+          </div>
+          <div class="format-item">
+            <b>5</b>
+            <strong>PR投稿</strong>
+            <span>PRでは5選形式で魅力を凝縮。お店の強みが自然に伝わる動画にします。</span>
+          </div>
+        </div>
+      </div>
+      <div class="video-embed" aria-label="紹介動画の埋め込み予定枠">
+        <div class="video-placeholder">
+          <div>
+            <div class="play-mark"></div>
+            <strong>紹介動画をここに埋め込み予定</strong>
+            <span>YouTube / TikTok / Instagram動画URLに差し替え可能</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
