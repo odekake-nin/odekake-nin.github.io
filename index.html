@@ -696,7 +696,7 @@
 
     .about-panel {
       display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 0.72fr);
       gap: 40px;
       align-items: center;
       padding: 34px;
@@ -805,14 +805,16 @@
     .video-embed {
       position: relative;
       z-index: 1;
-      aspect-ratio: 16 / 9;
-      border-radius: 8px;
+      width: min(320px, 100%);
+      aspect-ratio: 9 / 16;
+      border-radius: 26px;
       overflow: hidden;
       background:
         linear-gradient(180deg, rgba(5,10,18,0.06), rgba(5,10,18,0.42)),
         linear-gradient(135deg, #0f8f5f, #111827 68%);
       box-shadow: 0 28px 70px rgba(23,32,51,0.18);
-      border: 1px solid rgba(255,255,255,0.44);
+      border: 10px solid #101827;
+      justify-self: center;
     }
 
     .video-embed::before {
@@ -821,12 +823,25 @@
       inset: 0;
       background:
         radial-gradient(circle at 28% 32%, rgba(255,255,255,0.22), transparent 28%),
-        repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0 1px, transparent 1px 46px);
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0 1px, transparent 1px 38px);
+    }
+
+    .video-embed::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 12px;
+      width: 84px;
+      height: 22px;
+      transform: translateX(-50%);
+      border-radius: 99px;
+      background: #050812;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
     }
 
     .video-placeholder {
       position: absolute;
-      inset: 0;
+      inset: 32px 0 0;
       display: grid;
       place-items: center;
       text-align: center;
@@ -857,6 +872,7 @@
       display: block;
       font-size: 1.05rem;
       margin-bottom: 6px;
+      line-height: 1.5;
     }
 
     .video-placeholder span {
@@ -2000,7 +2016,7 @@
       .about-channel { padding: 32px 24px 68px; }
       .about-panel { grid-template-columns: 1fr; padding: 24px; gap: 26px; }
       .format-switch { grid-template-columns: 1fr; }
-      .video-embed { aspect-ratio: 4 / 5; }
+      .video-embed { width: min(280px, 100%); aspect-ratio: 9 / 16; }
       .section { padding: 68px 24px; }
       .platform-grid { grid-template-columns: 1fr; gap: 14px; }
       .process-band { grid-template-columns: 1fr; padding: 24px; gap: 22px; }
@@ -2163,27 +2179,27 @@
           </div>
         </div>
         <div class="section-label">ABOUT</div>
-        <div class="section-title">「行ってみたい」を作る<br>お出かけメディア</div>
-        <div class="section-sub">飲食店・ホテル・お出かけスポットを、見た人が保存したくなるショート動画で紹介。普段は「7選」形式で街の魅力をまとめ、PRではより伝わりやすい「5選」形式でお店の強みを届けます。</div>
+        <div class="section-title">必殺おでかけ人とは？</div>
+        <div class="section-sub">「週末、どこへ行こう？」「何をしよう？」と悩む人に、思わず「ここに行きたい！」と思えるひらめきを、たった1分の動画で届けるお出かけメディアです。<br><br>何気なくSNSをスクロールしていた瞬間に、予定のない週末が楽しみな週末へ変わる。そんな行動のきっかけになる動画を、お店と一緒につくります。</div>
         <div class="format-switch">
           <div class="format-item">
             <b>7</b>
             <strong>通常投稿</strong>
-            <span>普段はお出かけ先を7選形式で紹介。保存・比較されやすい構成で認知を広げます。</span>
+            <span>普段は7選形式で、街の魅力やお出かけ先をまとめて紹介します。</span>
           </div>
           <div class="format-item">
             <b>5</b>
             <strong>PR投稿</strong>
-            <span>PRでは5選形式で魅力を凝縮。お店の強みが自然に伝わる動画にします。</span>
+            <span>PRでは5選形式で、お店の魅力が自然に伝わるように構成します。</span>
           </div>
         </div>
       </div>
-      <div class="video-embed" aria-label="紹介動画の埋め込み予定枠">
+      <div class="video-embed" aria-label="縦型紹介動画の埋め込み予定枠">
         <div class="video-placeholder">
           <div>
             <div class="play-mark"></div>
-            <strong>紹介動画をここに埋め込み予定</strong>
-            <span>YouTube / TikTok / Instagram動画URLに差し替え可能</span>
+            <strong>縦型動画をここに埋め込み予定</strong>
+            <span>YouTube Shorts / TikTok / Reelsに差し替え可能</span>
           </div>
         </div>
       </div>
