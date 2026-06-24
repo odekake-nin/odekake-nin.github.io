@@ -3,62 +3,2206 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>必殺おでかけ人</title>
+  <title>必殺おでかけ人 | PR動画制作</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --ink: #172033;
+      --muted: #657083;
+      --subtle: #8b95a7;
+      --line: #e6e9ef;
+      --paper: #ffffff;
+      --soft: #f6f8fb;
+      --cream: #effaf4;
+      --accent: #0f8f5f;
+      --accent-dark: #076747;
+      --accent-soft: #e8f8ef;
+      --navy: #101b2e;
+      --deep: #07101f;
+      --green: #0f8f5f;
+      --shadow: 0 18px 50px rgba(23, 32, 51, 0.08);
+      --shadow-strong: 0 24px 70px rgba(23, 32, 51, 0.14);
+      --radius: 8px;
+    }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif; color: #1a1a1a; background: #fff; }
-    header { background: #1a1a1a; color: #fff; padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; }
-    header h1 { font-size: 1.2rem; font-weight: 700; }
-    nav a { color: #ccc; text-decoration: none; margin-left: 24px; font-size: 0.85rem; }
-    nav a:hover { color: #fff; }
-    .hero { background: #f9f9f9; padding: 80px 40px; text-align: center; }
-    .hero h2 { font-size: 2rem; font-weight: 800; margin-bottom: 16px; }
-    .hero p { font-size: 1rem; color: #555; max-width: 560px; margin: 0 auto; line-height: 1.8; }
-    .section { padding: 60px 40px; max-width: 800px; margin: 0 auto; }
-    .section h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 24px; border-left: 4px solid #1a1a1a; padding-left: 12px; }
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-    .card { border: 1px solid #e5e5e5; border-radius: 12px; padding: 24px; }
-    .card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
-    .card p { font-size: 0.85rem; color: #666; line-height: 1.7; }
-    footer { background: #1a1a1a; color: #888; text-align: center; padding: 24px; font-size: 0.8rem; }
-    footer a { color: #888; text-decoration: none; margin: 0 12px; }
-    footer a:hover { color: #fff; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--paper);
+    }
+
+    body {
+      font-family: 'Noto Sans JP', -apple-system, sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, #f8fafc 0%, #fff 40%, #f6f8fb 100%);
+      line-height: 1.6;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .nowrap { white-space: nowrap; }
+
+    ::selection {
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+    }
+
+    /* ── Header ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.86);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(230, 233, 239, 0.85);
+      padding: 14px clamp(20px, 5vw, 56px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: 0;
+      color: var(--navy);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo::before {
+      content: '';
+      width: 9px;
+      height: 28px;
+      border-radius: 99px;
+      background: linear-gradient(180deg, #34c98b, var(--accent));
+      box-shadow: 0 8px 20px rgba(15, 143, 95, 0.28);
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--accent); }
+
+    nav a.nav-cta {
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), #20b577);
+      padding: 9px 14px;
+      border-radius: 99px;
+      box-shadow: 0 12px 28px rgba(15, 143, 95, 0.22);
+    }
+
+    nav a.nav-cta:hover {
+      color: #fff;
+      background: var(--accent);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 78% 18%, rgba(32, 181, 119, 0.2), transparent 30%),
+        radial-gradient(circle at 12% 82%, rgba(55, 100, 150, 0.14), transparent 34%),
+        linear-gradient(135deg, #ffffff 0%, #effaf4 50%, #eef5ff 100%);
+      color: var(--ink);
+      min-height: calc(100vh - 72px);
+      padding: 84px clamp(22px, 5vw, 64px) 92px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(16,27,46,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16,27,46,0.045) 1px, transparent 1px);
+      background-size: 58px 58px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.9), transparent 86%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 28px clamp(18px, 5vw, 54px);
+      border: 1px solid rgba(255,255,255,0.75);
+      border-radius: 28px;
+      pointer-events: none;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.85), 0 24px 90px rgba(23,32,51,0.07);
+    }
+
+    .hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 0.98fr) minmax(500px, 1.02fr);
+      gap: clamp(42px, 7vw, 96px);
+      align-items: center;
+    }
+
+    .hero-copy {
+      text-align: left;
+      animation: heroCopy 0.8s ease-out both;
+      max-width: 540px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(15, 143, 95, 0.2);
+      color: var(--accent-dark);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 7px 16px;
+      border-radius: 99px;
+      margin-bottom: 24px;
+      box-shadow: 0 18px 46px rgba(23,32,51,0.08);
+      backdrop-filter: blur(16px);
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 5px rgba(22, 132, 91, 0.1);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.25rem, 4.2vw, 3.85rem);
+      font-weight: 900;
+      line-height: 1.12;
+      margin-bottom: 24px;
+      letter-spacing: 0;
+      color: var(--navy);
+      text-wrap: balance;
+    }
+
+    .hero h1 .line {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: transparent;
+      background: linear-gradient(135deg, #32c88a, #0f8f5f);
+      -webkit-background-clip: text;
+      background-clip: text;
+      text-shadow: 0 18px 40px rgba(32, 181, 119, 0.22);
+    }
+
+    .hero p {
+      font-size: 1.04rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 0 36px;
+      line-height: 1.9;
+    }
+
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .hero-proof span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 12px;
+      background: rgba(255,255,255,0.76);
+      border: 1px solid rgba(230,233,239,0.9);
+      border-radius: 99px;
+      box-shadow: 0 16px 42px rgba(23,32,51,0.08);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-proof span::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .hero-visual {
+      min-height: 540px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      animation: heroVisual 0.9s 0.12s ease-out both;
+    }
+
+    .phone-mockup {
+      width: min(306px, 72vw);
+      aspect-ratio: 9 / 16;
+      position: relative;
+      z-index: 2;
+      border-radius: 34px;
+      padding: 12px;
+      background: linear-gradient(145deg, #162033, #060a12);
+      box-shadow:
+        0 44px 110px rgba(0, 0, 0, 0.48),
+        inset 0 0 0 1px rgba(255,255,255,0.1);
+      transform: rotate(2deg);
+      animation: phoneFloat 5s ease-in-out infinite;
+    }
+
+    .phone-mockup::before {
+      content: '';
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      width: 82px;
+      height: 22px;
+      transform: translateX(-50%);
+      border-radius: 99px;
+      background: #050812;
+      z-index: 3;
+    }
+
+    .phone-screen {
+      height: 100%;
+      overflow: hidden;
+      border-radius: 25px;
+      background:
+        linear-gradient(180deg, rgba(4,9,18,0.12) 0%, rgba(4,9,18,0.88) 100%),
+        linear-gradient(145deg, #25b981, #0d7f58 42%, #151b29 100%);
+      position: relative;
+    }
+
+    .phone-screen::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.18) 18%, transparent 34%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 38px);
+      animation: lightSweep 4.8s ease-in-out infinite;
+    }
+
+    .phone-topbar {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      top: 46px;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+    }
+
+    .live-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 8px;
+      border-radius: 99px;
+      background: rgba(0,0,0,0.34);
+      backdrop-filter: blur(12px);
+    }
+
+    .live-dot::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #35e39d;
+      box-shadow: 0 0 18px #35e39d;
+    }
+
+    .phone-account {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      top: 82px;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 10px;
+      border-radius: 14px;
+      background: rgba(0,0,0,0.22);
+      border: 1px solid rgba(255,255,255,0.13);
+      backdrop-filter: blur(14px);
+    }
+
+    .phone-account img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255,255,255,0.72);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.22);
+      flex-shrink: 0;
+    }
+
+    .phone-account strong {
+      display: block;
+      color: #fff;
+      font-size: 0.74rem;
+      line-height: 1.2;
+    }
+
+    .phone-account span {
+      display: block;
+      color: rgba(255,255,255,0.62);
+      font-size: 0.56rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      margin-top: 2px;
+    }
+
+    .story-stage {
+      position: absolute;
+      inset: 136px 18px 142px;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 0.78fr;
+      gap: 9px;
+      transform: rotate(-2deg);
+    }
+
+    .story-tile {
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      min-height: 92px;
+      box-shadow: 0 16px 34px rgba(0,0,0,0.28);
+      border: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .story-tile::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 10px;
+      bottom: 9px;
+      color: #fff;
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    }
+
+    .story-tile.food {
+      grid-row: span 2;
+      background:
+        radial-gradient(circle at 36% 34%, #ffd18e 0 16%, transparent 17%),
+        radial-gradient(circle at 70% 54%, #f45d3b 0 12%, transparent 13%),
+        linear-gradient(145deg, #272f44, #1eb77b);
+    }
+
+    .story-tile.hotel {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.2), rgba(0,0,0,0.26)),
+        linear-gradient(135deg, #c8d7e8, #33435e);
+    }
+
+    .story-tile.trip {
+      background:
+        radial-gradient(circle at 72% 28%, #fff6b8 0 13%, transparent 14%),
+        linear-gradient(135deg, #51b6c8, #1f5f88 55%, #102033);
+    }
+
+    .reel-caption {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 28px;
+      color: #fff;
+      z-index: 2;
+    }
+
+    .reel-caption strong {
+      display: block;
+      font-size: 1.15rem;
+      line-height: 1.45;
+      margin-bottom: 10px;
+    }
+
+    .reel-lines {
+      display: grid;
+      gap: 7px;
+    }
+
+    .reel-lines span {
+      height: 7px;
+      border-radius: 99px;
+      background: rgba(255,255,255,0.72);
+      animation: linePulse 2.4s ease-in-out infinite;
+    }
+
+    .reel-lines span:nth-child(2) {
+      width: 72%;
+      animation-delay: 0.25s;
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 5;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(18px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-strong);
+      color: var(--navy);
+      animation: cardFloat 4.6s ease-in-out infinite;
+    }
+
+    .metric-chip {
+      min-width: 162px;
+      padding: 14px 16px;
+    }
+
+    .metric-chip strong {
+      display: block;
+      font-size: 1.35rem;
+      line-height: 1;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    .metric-chip span {
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .chip-top {
+      top: 64px;
+      right: -74px;
+    }
+
+    .chip-bottom {
+      left: -112px;
+      bottom: 64px;
+      animation-delay: 0.7s;
+    }
+
+    .chip-instagram {
+      left: -92px;
+      top: 154px;
+      animation-delay: 1.05s;
+    }
+
+    .chip-tiktok {
+      right: -70px;
+      bottom: 152px;
+      animation-delay: 1.35s;
+    }
+
+    .ticker {
+      position: absolute;
+      left: 50%;
+      bottom: 16px;
+      width: min(900px, calc(100% - 40px));
+      transform: translateX(-50%);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 99px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(14px);
+      color: rgba(255,255,255,0.68);
+      font-size: 0.74rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .ticker-track {
+      display: inline-flex;
+      gap: 28px;
+      padding: 9px 20px;
+      animation: tickerMove 18s linear infinite;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--accent), #20b577);
+      color: #fff;
+      font-weight: 900;
+      font-size: 0.95rem;
+      padding: 15px 32px;
+      border-radius: 99px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 18px 42px rgba(32, 181, 119, 0.34);
+    }
+
+    .cta-btn::after {
+      content: '→';
+      font-weight: 900;
+      line-height: 1;
+      transition: transform 0.2s;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 42px rgba(15, 143, 95, 0.34);
+    }
+
+    .cta-btn:hover::after {
+      transform: translateX(3px);
+    }
+
+    /* ── Stats ── */
+    .stats {
+      background: linear-gradient(180deg, #fff 0%, #f7f9fc 100%);
+      padding: 0 40px 56px;
+      margin-top: -42px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .stats-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      text-align: center;
+      background: rgba(255,255,255,0.86);
+      border: 1px solid rgba(230,233,239,0.95);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 30px 90px rgba(23,32,51,0.11);
+      backdrop-filter: blur(16px);
+    }
+
+    .stat-item {
+      padding: 26px 20px;
+      background: linear-gradient(180deg, #fff, #fbfcff);
+      position: relative;
+    }
+
+    .stat-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 22px;
+      right: 0;
+      bottom: 22px;
+      width: 1px;
+      background: var(--line);
+    }
+
+    .stat-num {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-item.total-views .stat-num {
+      color: var(--accent);
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    .stat-platform {
+      font-size: 0.68rem;
+      color: var(--subtle);
+      margin-top: 3px;
+    }
+
+    /* ── Section ── */
+    .section {
+      padding: 104px 40px;
+      max-width: 1040px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(1.65rem, 3.4vw, 2.45rem);
+      font-weight: 900;
+      margin-bottom: 12px;
+      line-height: 1.3;
+      color: var(--navy);
+    }
+
+    .section-sub {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 48px;
+      line-height: 1.8;
+    }
+
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 2px;
+      margin-right: 10px;
+      vertical-align: middle;
+      background: currentColor;
+      border-radius: 99px;
+    }
+
+    /* ── Platform cards ── */
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .platform-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 34px 30px 30px;
+      text-align: left;
+      box-shadow: 0 20px 70px rgba(23,32,51,0.08);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .platform-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-strong);
+      border-color: rgba(15, 143, 95, 0.26);
+    }
+
+    .platform-card::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: var(--accent);
+    }
+
+    .platform-card::after {
+      content: '';
+      position: absolute;
+      right: -34px;
+      bottom: -34px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(15,143,95,0.07);
+    }
+
+    .platform-card.tiktok::before,
+    .platform-card.youtube::before,
+    .platform-card.insta::before { background: linear-gradient(90deg, var(--accent), #7adf9d); }
+
+    .platform-logo {
+      width: 58px;
+      height: 58px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #fff;
+      margin-bottom: 16px;
+      position: relative;
+      overflow: hidden;
+      box-shadow:
+        0 16px 34px rgba(23,32,51,0.12),
+        inset 0 0 0 1px rgba(15,143,95,0.12);
+    }
+
+    .platform-logo::before,
+    .platform-logo::after {
+      content: '';
+      position: absolute;
+    }
+
+    .platform-card.tiktok .platform-logo {
+      background: #11131a;
+    }
+
+    .platform-card.tiktok .platform-logo::before {
+      content: '♪';
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -53%) rotate(-6deg);
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1;
+      text-shadow: -2px 0 #25f4ee, 2px 0 #fe2c55;
+    }
+
+    .platform-card.insta .platform-logo {
+      background:
+        radial-gradient(circle at 28% 105%, #fdf497 0 17%, #fd5949 42%, #d6249f 66%, #285aeb 100%);
+    }
+
+    .platform-card.insta .platform-logo::before {
+      inset: 14px;
+      border: 3px solid #fff;
+      border-radius: 13px;
+    }
+
+    .platform-card.insta .platform-logo::after {
+      width: 14px;
+      height: 14px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border: 3px solid #fff;
+      border-radius: 50%;
+      box-shadow: 13px -13px 0 -4px #fff;
+    }
+
+    .platform-card.youtube .platform-logo {
+      background: #fff;
+    }
+
+    .platform-card.youtube .platform-logo::before {
+      width: 36px;
+      height: 25px;
+      left: 11px;
+      top: 17px;
+      border-radius: 8px;
+      background: #ff0033;
+      box-shadow: 0 8px 18px rgba(255,0,51,0.28);
+    }
+
+    .platform-card.youtube .platform-logo::after {
+      left: 26px;
+      top: 24px;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 10px solid #fff;
+    }
+
+    .platform-name {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--subtle);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .platform-followers {
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .platform-card.tiktok  .platform-followers,
+    .platform-card.youtube .platform-followers,
+    .platform-card.insta   .platform-followers { color: var(--accent-dark); }
+
+    .platform-unit {
+      font-size: 0.78rem;
+      color: var(--subtle);
+      margin-bottom: 14px;
+    }
+
+    .platform-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.8;
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .platform-meter {
+      height: 8px;
+      background: #edf1f7;
+      border-radius: 99px;
+      margin: 18px 0 14px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    .platform-meter span {
+      display: block;
+      height: 100%;
+      width: var(--value);
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), #7adf9d);
+    }
+
+    .platform-card.tiktok .platform-meter span,
+    .platform-card.youtube .platform-meter span,
+    .platform-card.insta .platform-meter span { background: linear-gradient(90deg, var(--accent), #7adf9d); }
+
+    /* ── Service cards ── */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .service-card {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.96), rgba(232,248,239,0.78));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 34px 32px;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      box-shadow: 0 14px 44px rgba(23, 32, 51, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      inset: auto 26px 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      opacity: 0.7;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+      border-color: rgba(15, 143, 95, 0.22);
+    }
+
+    .service-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 0.78rem;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .service-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+
+    .service-card p {
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .delivery-board {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      overflow: hidden;
+      border: 1px solid rgba(15,143,95,0.16);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.92), rgba(232,248,239,0.72));
+      box-shadow: 0 24px 70px rgba(23,32,51,0.07);
+    }
+
+    .delivery-item {
+      padding: 18px 16px;
+      border-right: 1px solid rgba(15,143,95,0.12);
+      position: relative;
+    }
+
+    .delivery-item:last-child { border-right: none; }
+
+    .delivery-item span {
+      display: block;
+      color: var(--accent);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      margin-bottom: 5px;
+    }
+
+    .delivery-item strong {
+      display: block;
+      color: var(--navy);
+      font-size: 0.88rem;
+    }
+
+    /* ── Why us ── */
+    .why-bg {
+      background:
+        radial-gradient(circle at 10% 12%, rgba(15,143,95,0.09), transparent 25%),
+        linear-gradient(180deg, #f7f9fc 0%, #fff 100%);
+      padding: 104px 40px;
+      border-top: 1px solid var(--line);
+    }
+
+    .why-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .strength-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-bottom: 56px;
+    }
+
+    .strength-card {
+      text-align: center;
+      padding: 38px 26px;
+      border-radius: var(--radius);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .strength-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(15,143,95,0.09), transparent 45%);
+      pointer-events: none;
+    }
+
+    .strength-num {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 4px;
+      position: relative;
+    }
+
+    .strength-unit {
+      font-size: 0.78rem;
+      color: var(--accent-dark);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .strength-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+
+    .strength-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* 比較表 */
+    .compare-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 0.88rem;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .compare-table th {
+      padding: 14px 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-align: center;
+      border-bottom: 1px solid var(--line);
+      background: #fbfcfe;
+    }
+
+    .compare-table th.highlight {
+      background: linear-gradient(135deg, var(--accent), #20b577);
+      color: #fff;
+      border-radius: 0;
+    }
+
+    .compare-table td {
+      padding: 14px 20px;
+      text-align: center;
+      border-bottom: 1px solid #edf0f4;
+      color: var(--muted);
+    }
+
+    .compare-table td.row-label {
+      text-align: left;
+      font-weight: 600;
+      color: var(--ink);
+      font-size: 0.82rem;
+    }
+
+    .compare-table td.highlight {
+      background: var(--cream);
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    .compare-table tr:last-child td { border-bottom: none; }
+
+    .check { color: var(--green); font-size: 1.1rem; }
+    .cross { color: #c4cad4; font-size: 1.1rem; }
+
+    /* ── Pricing ── */
+    .pricing-bg {
+      background:
+        radial-gradient(circle at 78% 12%, rgba(15,143,95,0.1), transparent 32%),
+        linear-gradient(180deg, #fff 0%, #effaf4 100%),
+        #fff;
+      padding: 104px 40px;
+      border-top: 1px solid var(--line);
+    }
+
+    .pricing-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .pricing-card {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 36px 30px;
+      position: relative;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: 5px;
+      background: #dce3ee;
+    }
+
+    .pricing-card.featured {
+      border: 2px solid var(--accent);
+      box-shadow: 0 24px 64px rgba(15, 143, 95, 0.18);
+      transform: translateY(-8px);
+    }
+
+    .pricing-card.featured::before {
+      background: linear-gradient(90deg, var(--accent), #7adf9d);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 4px 16px;
+      border-radius: 99px;
+      white-space: nowrap;
+    }
+
+    .pricing-name {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--subtle);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .pricing-price-wrap {
+      margin-bottom: 6px;
+    }
+
+    .pricing-original {
+      font-size: 0.78rem;
+      color: #aeb6c4;
+      text-decoration: line-through;
+      margin-bottom: 2px;
+    }
+
+    .pricing-price {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .pricing-price span {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .pricing-sub {
+      font-size: 0.75rem;
+      color: var(--subtle);
+      margin-bottom: 24px;
+      margin-top: 4px;
+    }
+
+    .pricing-divider {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin-bottom: 20px;
+    }
+
+    .pricing-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .pricing-features li {
+      font-size: 0.82rem;
+      color: var(--muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.5;
+    }
+
+    .pricing-features li::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .pricing-note {
+      text-align: center;
+      font-size: 0.76rem;
+      color: var(--subtle);
+      margin-top: 28px;
+    }
+
+    @media (max-width: 640px) {
+      .pricing-bg { padding: 60px 24px; }
+      .pricing-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Flow ── */
+    .flow-bg {
+      background:
+        linear-gradient(180deg, #f7f9fc 0%, #fff 100%);
+      padding: 104px 40px;
+      border-top: 1px solid var(--line);
+    }
+
+    .flow-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin-top: 48px;
+      position: relative;
+    }
+
+    .flow-steps::before {
+      content: '';
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      top: 52px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(15,143,95,0.34), transparent);
+    }
+
+    .flow-step {
+      text-align: center;
+      padding: 26px 18px;
+      position: relative;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 18px 54px rgba(23,32,51,0.06);
+      z-index: 1;
+    }
+
+    .flow-step:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: -14px;
+      top: 28px;
+      font-size: 1.2rem;
+      color: var(--accent);
+      z-index: 2;
+    }
+
+    .step-num {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, var(--accent), #20b577);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 900;
+      margin: 0 auto 14px;
+    }
+
+    .step-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--navy);
+    }
+
+    .step-desc {
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── CTA Section ── */
+    .cta-section {
+      background:
+        radial-gradient(circle at 18% 24%, rgba(32,181,119,0.18), transparent 34%),
+        linear-gradient(135deg, #fff 0%, #effaf4 48%, #eef5ff 100%);
+      border-top: 1px solid var(--line);
+      color: var(--navy);
+      padding: 104px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 28px clamp(18px, 5vw, 54px);
+      border: 1px solid rgba(255,255,255,0.72);
+      border-radius: 24px;
+      pointer-events: none;
+    }
+
+    .cta-section > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .cta-section p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .cta-note {
+      font-size: 0.75rem;
+      color: var(--subtle);
+      margin-top: 16px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #fff;
+      border-top: 1px solid var(--line);
+      color: var(--subtle);
+      text-align: center;
+      padding: 24px 40px;
+      font-size: 0.75rem;
+    }
+
+    footer a { color: var(--muted); text-decoration: none; margin: 0 12px; }
+    footer a:hover { color: var(--accent); }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.72s ease, transform 0.72s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .platform-card,
+    .service-card,
+    .strength-card,
+    .pricing-card,
+    .flow-step {
+      will-change: transform;
+    }
+
+    .strength-card,
+    .pricing-card,
+    .flow-step {
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+
+    .strength-card:hover,
+    .pricing-card:hover,
+    .flow-step:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-strong);
+      border-color: rgba(15, 143, 95, 0.24);
+    }
+
+    .pricing-card.featured:hover {
+      transform: translateY(-12px);
+    }
+
+    /* ── Editorial sections ── */
+    .process-band {
+      display: grid;
+      grid-template-columns: minmax(330px, 0.95fr) 1.45fr;
+      gap: 30px;
+      align-items: stretch;
+      padding: 34px;
+      border: 1px solid rgba(15,143,95,0.14);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.96), rgba(239,250,244,0.78));
+      box-shadow: 0 24px 80px rgba(23,32,51,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .process-band::before {
+      content: '';
+      position: absolute;
+      left: 34px;
+      right: 34px;
+      top: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), #7adf9d, transparent);
+    }
+
+    .process-promise {
+      padding: 10px 8px 10px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .process-promise strong {
+      display: block;
+      color: var(--navy);
+      font-size: clamp(1.55rem, 2.7vw, 2rem);
+      font-weight: 900;
+      line-height: 1.42;
+    }
+
+    .process-promise span {
+      color: var(--accent);
+    }
+
+    .process-promise p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.9;
+      margin-top: 16px;
+    }
+
+    .process-mini {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 99px;
+      background: #fff;
+      color: var(--accent-dark);
+      font-size: 0.78rem;
+      font-weight: 900;
+      box-shadow: 0 14px 36px rgba(23,32,51,0.08);
+    }
+
+    .process-mini::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px var(--accent-soft);
+    }
+
+    .process-line {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      align-items: stretch;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(15,143,95,0.12);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .process-step {
+      min-height: 176px;
+      padding: 82px 18px 24px;
+      border-right: 1px solid rgba(15,143,95,0.11);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 10px;
+    }
+
+    .process-step:last-child { border-right: none; }
+
+    .process-step b {
+      position: absolute;
+      left: 18px;
+      top: 22px;
+      color: rgba(15,143,95,0.18);
+      font-size: 2.15rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .process-step strong {
+      color: var(--navy);
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
+
+    .process-step span {
+      color: var(--muted);
+      font-size: 0.74rem;
+      line-height: 1.65;
+    }
+
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-bottom: 46px;
+      border-top: 1px solid rgba(15,143,95,0.16);
+      border-bottom: 1px solid rgba(15,143,95,0.16);
+      background: linear-gradient(90deg, rgba(255,255,255,0.78), rgba(232,248,239,0.55), rgba(255,255,255,0.78));
+    }
+
+    .proof-item {
+      padding: 32px 30px;
+      border-right: 1px solid rgba(15,143,95,0.12);
+    }
+
+    .proof-item:last-child { border-right: none; }
+
+    .proof-kicker {
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .proof-big {
+      color: var(--navy);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .proof-big em {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    .proof-copy {
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.8;
+    }
+
+    .pricing-offer {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 0;
+      border-radius: 8px;
+      border: 1px solid rgba(15,143,95,0.16);
+      background: #fff;
+      box-shadow: 0 28px 90px rgba(23,32,51,0.1);
+      overflow: hidden;
+    }
+
+    .pricing-main {
+      padding: 42px;
+      background:
+        radial-gradient(circle at 86% 18%, rgba(32,181,119,0.16), transparent 30%),
+        linear-gradient(135deg, #fff, #effaf4);
+    }
+
+    .pricing-main .pricing-badge {
+      position: static;
+      transform: none;
+      display: inline-flex;
+      margin-bottom: 22px;
+    }
+
+    .pricing-main h3 {
+      color: var(--navy);
+      font-size: clamp(1.45rem, 3vw, 2.25rem);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 18px;
+    }
+
+    .pricing-main .pricing-price {
+      font-size: clamp(2.6rem, 6vw, 4.2rem);
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .pricing-main .pricing-sub {
+      color: var(--muted);
+      font-size: 0.86rem;
+      margin-bottom: 0;
+    }
+
+    .pricing-details {
+      padding: 36px 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .pricing-row {
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      gap: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+
+    .pricing-row:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .pricing-row strong {
+      color: var(--accent-dark);
+      font-size: 0.82rem;
+      font-weight: 900;
+    }
+
+    .pricing-row span {
+      color: var(--muted);
+      font-size: 0.83rem;
+      line-height: 1.7;
+    }
+
+    .option-rail {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: rgba(15,143,95,0.14);
+      border: 1px solid rgba(15,143,95,0.14);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .option-item {
+      background: rgba(255,255,255,0.86);
+      padding: 20px 22px;
+    }
+
+    .option-item strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 6px;
+      font-size: 0.94rem;
+    }
+
+    .option-item span {
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.7;
+    }
+
+    .flow-timeline {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 2px solid rgba(15,143,95,0.22);
+      position: relative;
+    }
+
+    .flow-node {
+      padding: 30px 24px 0 0;
+      position: relative;
+    }
+
+    .flow-node::before {
+      content: '';
+      position: absolute;
+      top: -9px;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 8px var(--accent-soft);
+    }
+
+    .flow-node b {
+      display: block;
+      color: rgba(15,143,95,0.24);
+      font-size: 2.6rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .flow-node strong {
+      display: block;
+      color: var(--navy);
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .flow-node span {
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.8;
+    }
+
+    @keyframes heroCopy {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes heroVisual {
+      from { opacity: 0; transform: translateY(22px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes phoneFloat {
+      0%, 100% { transform: rotate(2deg) translateY(0); }
+      50% { transform: rotate(-1deg) translateY(-12px); }
+    }
+
+    @keyframes cardFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes lightSweep {
+      0%, 42% { transform: translateX(-90%); opacity: 0; }
+      55% { opacity: 1; }
+      100% { transform: translateX(90%); opacity: 0; }
+    }
+
+    @keyframes linePulse {
+      0%, 100% { opacity: 0.46; transform: scaleX(0.9); transform-origin: left; }
+      50% { opacity: 0.9; transform: scaleX(1); }
+    }
+
+    @keyframes tickerMove {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      header { padding: 14px 20px; align-items: flex-start; gap: 12px; }
+      nav { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+      nav a { margin-left: 0; font-size: 0.72rem; }
+      nav a.nav-cta { padding: 7px 11px; }
+      .hero { min-height: auto; padding: 66px 24px 78px; }
+      .hero::after { inset: 16px; border-radius: 20px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 34px; }
+      .hero-copy { text-align: center; }
+      .hero p { font-size: 0.92rem; }
+      .hero p { margin: 0 auto 30px; }
+      .hero-proof { justify-content: center; }
+      .hero-visual { min-height: 410px; }
+      .phone-mockup { width: min(238px, 70vw); }
+      .phone-account { top: 76px; left: 16px; right: 16px; padding: 7px 9px; }
+      .phone-account img { width: 26px; height: 26px; }
+      .phone-account strong { font-size: 0.66rem; }
+      .phone-account span { font-size: 0.5rem; }
+      .story-stage { inset: 128px 16px 138px; gap: 7px; }
+      .floating-card { transform: scale(0.86); transform-origin: center; }
+      .chip-top { right: -10px; top: 24px; }
+      .chip-bottom { left: -6px; bottom: 28px; }
+      .chip-instagram { left: -10px; top: 116px; }
+      .chip-tiktok { right: -10px; bottom: 116px; }
+      .account-label { font-size: 0.54rem; }
+      .ticker { bottom: 10px; }
+      .cta-btn { width: 100%; max-width: 340px; justify-content: center; padding: 14px 20px; }
+      .stats { padding: 0 16px 24px; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 0; }
+      .stat-num { font-size: 1.4rem; }
+      .stat-item { padding: 18px 8px; border-right: none; border-bottom: 1px solid var(--line); }
+      .stat-item::after { display: none; }
+      .stat-item:nth-child(odd) { border-right: 1px solid var(--line); }
+      .stat-item:nth-last-child(-n+2) { border-bottom: none; }
+      .section { padding: 68px 24px; }
+      .platform-grid { grid-template-columns: 1fr; gap: 14px; }
+      .process-band { grid-template-columns: 1fr; padding: 24px; gap: 22px; }
+      .process-line { grid-template-columns: 1fr; }
+      .process-step { min-height: 128px; border-right: none; border-bottom: 1px solid rgba(15,143,95,0.11); }
+      .process-step:last-child { border-bottom: none; }
+      .delivery-board { grid-template-columns: 1fr; }
+      .delivery-item { border-right: none; border-bottom: 1px solid rgba(15,143,95,0.12); }
+      .delivery-item:last-child { border-bottom: none; }
+      .strength-grid { grid-template-columns: 1fr; gap: 14px; }
+      .proof-strip { grid-template-columns: 1fr; }
+      .proof-item { border-right: none; border-bottom: 1px solid rgba(15,143,95,0.12); padding: 28px 22px; }
+      .proof-item:last-child { border-bottom: none; }
+      .why-bg { padding: 68px 24px; }
+      .compare-table { font-size: 0.78rem; }
+      .compare-table td, .compare-table th { padding: 10px 12px; }
+      .pricing-card.featured { transform: none; }
+      .pricing-offer { grid-template-columns: 1fr; }
+      .pricing-main { padding: 30px 24px; }
+      .pricing-details { padding: 26px 22px; }
+      .pricing-row { grid-template-columns: 1fr; gap: 6px; }
+      .option-rail { grid-template-columns: 1fr; }
+      .flow-bg { padding: 68px 24px; }
+      .flow-steps { grid-template-columns: 1fr; gap: 32px; }
+      .flow-steps::before { display: none; }
+      .flow-step:not(:last-child)::after { display: none; }
+      .flow-timeline { grid-template-columns: 1fr; border-top: none; border-left: 2px solid rgba(15,143,95,0.22); margin-left: 8px; }
+      .flow-node { padding: 0 0 30px 28px; }
+      .flow-node::before { top: 4px; left: -9px; }
+      .cta-section { padding: 72px 24px; }
+      footer { padding: 20px; }
+    }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>必殺おでかけ人</h1>
+    <div class="logo">必殺おでかけ人</div>
     <nav>
-      <a href="terms.html">利用規約</a>
-      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="https://www.instagram.com/hissatsu_odekake_nin/" target="_blank" class="nav-cta">PR相談</a>
     </nav>
   </header>
 
-  <div class="hero">
-    <h2>店舗PR × 動画制作</h2>
-    <p>飲食店・ホテル・観光スポットなど、あらゆる店舗の魅力を動画で発信します。YouTube・TikTok・Instagramを活用した効果的なSNS運用をサポートします。</p>
-  </div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="hero-tag">PR MEDIA COMPANY</div>
+        <h1><span class="line">まだ知らないお客様に、</span><span class="line"><em>低コスト</em>で届く</span><span class="line">PR動画を。</span></h1>
+        <p>TikTok・Instagram・YouTubeで、お店の魅力を動画にして発信。<br>飲食店・ホテル・<span class="nowrap">お出かけスポット</span>の認知を、手軽に広げます。</p>
+        <a href="https://www.instagram.com/hissatsu_odekake_nin/" target="_blank" class="cta-btn">
+          PR案件のお問い合わせはこちら
+        </a>
+        <div class="hero-proof">
+          <span>3媒体同時投稿</span>
+          <span>最短1週間で納品</span>
+          <span>投稿後レポート対応</span>
+        </div>
+      </div>
 
-  <div class="section">
-    <h3>事業内容</h3>
-    <div class="cards">
-      <div class="card">
-        <h4>店舗PR事業</h4>
-        <p>飲食店・ホテル・観光スポットなどの魅力を動画で発信。SNSを通じた集客支援を行います。</p>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="floating-card metric-chip chip-top">
+          <strong>9万+</strong>
+          <span>SNS総フォロワー</span>
+        </div>
+        <div class="floating-card metric-chip chip-instagram">
+          <strong>153万</strong>
+          <span>Instagram最高再生数</span>
+        </div>
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            <div class="phone-topbar">
+              <span class="live-dot">LIVE PR</span>
+              <span>01:24</span>
+            </div>
+            <div class="phone-account">
+              <img src="assets/odesake-icon.jpeg" alt="">
+              <div>
+                <strong>必殺おでかけ人</strong>
+                <span>PR MOVIE</span>
+              </div>
+            </div>
+            <div class="story-stage">
+              <div class="story-tile food" data-label="FOOD"></div>
+              <div class="story-tile hotel" data-label="HOTEL"></div>
+              <div class="story-tile trip" data-label="TRIP"></div>
+            </div>
+            <div class="reel-caption">
+              <strong>行きたい理由が<br>15秒で伝わる</strong>
+              <div class="reel-lines">
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="floating-card metric-chip chip-bottom">
+          <strong>3,810万</strong>
+          <span>YouTube総再生回数</span>
+        </div>
+        <div class="floating-card metric-chip chip-tiktok">
+          <strong>3.6万</strong>
+          <span>TikTokフォロワー</span>
+        </div>
       </div>
-      <div class="card">
-        <h4>動画制作</h4>
-        <p>YouTube・TikTok・Instagram向けのショート動画・PR動画の企画・撮影・編集を行います。</p>
+    </div>
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>TikTok</span>
+        <span>Instagram</span>
+        <span>YouTube</span>
+        <span>飲食店PR</span>
+        <span>ホテルPR</span>
+        <span>お出かけスポットPR</span>
+        <span>TikTok</span>
+        <span>Instagram</span>
+        <span>YouTube</span>
+        <span>飲食店PR</span>
+        <span>ホテルPR</span>
+        <span>お出かけスポットPR</span>
       </div>
-      <div class="card">
-        <h4>SNS運用</h4>
-        <p>各種SNSアカウントの運用代行・コンテンツ管理・データ分析を通じてフォロワー拡大を支援します。</p>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-num" data-count="3.6" data-decimals="1" data-suffix="万">3.6万</div>
+        <div class="stat-label">フォロワー</div>
+        <div class="stat-platform">TikTok</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-count="3.1" data-decimals="1" data-suffix="万">3.1万</div>
+        <div class="stat-label">フォロワー</div>
+        <div class="stat-platform">Instagram</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-count="2.4" data-decimals="1" data-suffix="万">2.4万</div>
+        <div class="stat-label">チャンネル登録者</div>
+        <div class="stat-platform">YouTube</div>
+      </div>
+      <div class="stat-item total-views">
+        <div class="stat-num">3,810万</div>
+        <div class="stat-label">YouTube総再生回数</div>
+        <div class="stat-platform">累計</div>
       </div>
     </div>
   </div>
 
+  <!-- プラットフォームの強み -->
+  <div class="section reveal">
+    <div class="section-label">PLATFORM</div>
+    <div class="section-title">3つのSNSで同時にPRできる</div>
+    <div class="section-sub">TikTok・Instagram・YouTubeの3プラットフォームに投稿できるのが最大の強みです。<br>それぞれのユーザー層に合わせて、お店の認知を一気に広げられます。</div>
+
+    <div class="platform-grid">
+      <div class="platform-card tiktok">
+        <div class="platform-logo" aria-label="TikTok"></div>
+        <div class="platform-name">TikTok</div>
+        <div class="platform-followers">3.6万</div>
+        <div class="platform-unit">フォロワー</div>
+        <div class="platform-meter" style="--value: 92%"><span></span></div>
+        <div class="platform-desc">バズりやすいショート動画で<br>まだ知らない層への<br>爆発的な拡散が狙える</div>
+      </div>
+      <div class="platform-card insta">
+        <div class="platform-logo" aria-label="Instagram"></div>
+        <div class="platform-name">Instagram</div>
+        <div class="platform-followers">3.1万</div>
+        <div class="platform-unit">フォロワー</div>
+        <div class="platform-meter" style="--value: 82%"><span></span></div>
+        <div class="platform-desc">おしゃれな雰囲気重視のユーザーに<br>リール動画でリーチ。<br>保存・シェアされやすい</div>
+      </div>
+      <div class="platform-card youtube">
+        <div class="platform-logo" aria-label="YouTube"></div>
+        <div class="platform-name">YouTube</div>
+        <div class="platform-followers">2.4万</div>
+        <div class="platform-unit">チャンネル登録者</div>
+        <div class="platform-meter" style="--value: 96%"><span></span></div>
+        <div class="platform-desc">「行きたい」と検索するユーザーに<br>ショート動画で自然に訴求。<br>資産として残る</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- サービス内容 -->
+  <div class="section reveal" style="padding-top: 0">
+    <div class="section-label">WHAT WE DO</div>
+    <div class="section-title">企画から投稿まで<br>すべてお任せください</div>
+    <div class="section-sub">「何を作ればいいかわからない」という方でも大丈夫。<br>撮影・編集・投稿・レポートまで一括で対応します。</div>
+
+    <div class="process-band">
+      <div class="process-promise">
+        <div>
+          <strong>丸投げで、<br><span>PR動画が完成</span></strong>
+          <p>お店の魅力を整理し、ショート動画に落とし込み、3つのSNSへ投稿。投稿後の数字までまとめてご報告します。</p>
+        </div>
+        <div class="process-mini">最短1週間で投稿まで対応</div>
+      </div>
+      <div class="process-line">
+        <div class="process-step"><b>01</b><strong>企画</strong><span>魅力が伝わる見せ方を整理</span></div>
+        <div class="process-step"><b>02</b><strong>撮影</strong><span>料理・空間・体験を動画化</span></div>
+        <div class="process-step"><b>03</b><strong>編集</strong><span>SNSで止まるテンポに調整</span></div>
+        <div class="process-step"><b>04</b><strong>投稿</strong><span>TikTok・Instagram・YouTubeへ展開</span></div>
+        <div class="process-step"><b>05</b><strong>報告</strong><span>再生数や反応をレポート</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- なぜ必殺おでかけ人か -->
+  <div class="why-bg reveal">
+    <div class="why-inner">
+      <div style="text-align:center; margin-bottom:48px">
+        <div class="section-label">WHY US</div>
+        <div class="section-title">他と比べて選ばれる理由</div>
+        <div class="section-sub">短期間・低コストで、3プラットフォームへの同時投稿ができるのは<br>必殺おでかけ人だけの強みです。</div>
+      </div>
+
+      <div class="proof-strip">
+        <div class="proof-item">
+          <div class="proof-kicker">LOW COST</div>
+          <div class="proof-big"><em>9,900</em>円</div>
+          <div class="proof-copy">大手インフルエンサーより始めやすい価格で、お店の認知を広げられます。</div>
+        </div>
+        <div class="proof-item">
+          <div class="proof-kicker">SPEED</div>
+          <div class="proof-big"><em>1週</em>間〜</div>
+          <div class="proof-copy">新メニュー・イベント・繁忙期前にも間に合うスピード感で対応します。</div>
+        </div>
+        <div class="proof-item">
+          <div class="proof-kicker">REACH</div>
+          <div class="proof-big"><em>3</em>SNS</div>
+          <div class="proof-copy">TikTok・Instagram・YouTubeに同時展開し、違う層へ一気に届けます。</div>
+        </div>
+      </div>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th style="width:30%;text-align:left"></th>
+            <th class="highlight">必殺おでかけ人</th>
+            <th>他のインフルエンサー</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="row-label">費用</td>
+            <td class="highlight">9,900円（税込）</td>
+            <td>5万〜10万円</td>
+          </tr>
+          <tr>
+            <td class="row-label">納期</td>
+            <td class="highlight">最短1週間</td>
+            <td>3週間〜</td>
+          </tr>
+          <tr>
+            <td class="row-label">投稿先</td>
+            <td class="highlight">3プラットフォーム同時</td>
+            <td>通常1つのみ</td>
+          </tr>
+          <tr>
+            <td class="row-label">撮影の手間</td>
+            <td class="highlight"><span class="check">✓</span> 不要</td>
+            <td><span class="cross">✗</span> 別途対応が必要</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 料金プラン -->
+  <div class="pricing-bg reveal">
+    <div class="pricing-inner">
+      <div style="text-align:center; margin-bottom:48px">
+        <div class="section-label">PRICING</div>
+        <div class="section-title">料金プラン</div>
+        <div class="section-sub">撮影不要だから、大手インフルエンサーより圧倒的にリーズナブル。<br>まずは1本から気軽にお試しいただけます。</div>
+      </div>
+
+      <div class="pricing-offer">
+        <div class="pricing-main">
+          <div class="pricing-badge">いちばん人気</div>
+          <h3>まずは1本、<br>低コストでPRを試せます。</h3>
+          <div class="pricing-original">通常 15,000円</div>
+          <div class="pricing-price">9,900<span>円（税込）</span></div>
+          <div class="pricing-sub">スポットプラン / 1本あたり</div>
+        </div>
+        <div class="pricing-details">
+          <div class="pricing-row"><strong>投稿先</strong><span>TikTok・Instagram・YouTubeの3媒体へ同時投稿</span></div>
+          <div class="pricing-row"><strong>制作内容</strong><span>台本確認・修正対応込み。SNSで伝わる形に編集します。</span></div>
+          <div class="pricing-row"><strong>納品後</strong><span>投稿1週間後のインサイトレポートで反応を確認できます。</span></div>
+          <div class="pricing-row"><strong>スピード</strong><span>撮影不要の場合、最短1週間で投稿まで対応します。</span></div>
+        </div>
+      </div>
+
+      <div class="option-rail">
+        <div class="option-item">
+          <strong>継続プラン 11,000円（税込）/月</strong>
+          <span>月2本 × 3ヶ月〜。繰り返し投稿して、お店の認知を定着させます。</span>
+        </div>
+        <div class="option-item">
+          <strong>訪問オプション +2,750円〜（税込）</strong>
+          <span>実際に店舗を訪問・体験して、料理や雰囲気をリアルに伝えます。</span>
+        </div>
+      </div>
+
+      <div class="pricing-note">お支払いは月末締め翌月末払い・銀行振込。まずはお気軽にDMでご相談ください。</div>
+    </div>
+  </div>
+
+  <!-- 依頼の流れ -->
+  <div class="flow-bg reveal">
+    <div class="flow-inner">
+      <div style="text-align:center">
+        <div class="section-label">FLOW</div>
+        <div class="section-title">依頼の流れ</div>
+        <div class="section-sub">InstagramのDMから気軽にご連絡ください。最短1週間で投稿まで対応できます。</div>
+      </div>
+
+      <div class="flow-timeline">
+        <div class="flow-node"><b>01</b><strong>DMでご連絡</strong><span>InstagramのDMから、目的や希望時期を送ってください。</span></div>
+        <div class="flow-node"><b>02</b><strong>内容のご提案</strong><span>動画の方向性・見せ方・お見積もりをご提示します。</span></div>
+        <div class="flow-node"><b>03</b><strong>撮影・編集</strong><span>来店撮影または素材をもとに、ショート動画へ編集します。</span></div>
+        <div class="flow-node"><b>04</b><strong>投稿・納品</strong><span>各SNSへ投稿し、投稿後のデータもご報告します。</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section reveal">
+    <h2>まずはお気軽にDMください</h2>
+    <p>飲食店・カフェ・ホテル・お出かけスポット、どんな業種でもお気軽にご相談ください。</p>
+    <a href="https://www.instagram.com/hissatsu_odekake_nin/" target="_blank" class="cta-btn">
+      Instagramで問い合わせる
+    </a>
+    <div class="cta-note">@hissatsu_odekake_nin へDMをお送りください</div>
+  </div>
+
   <footer>
-    <p>© 2024 必殺おでかけ人　<a href="terms.html">利用規約</a><a href="privacy.html">プライバシーポリシー</a></p>
+    <p>© 2025 必殺おでかけ人</p>
   </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
+
+    reveals.forEach((item) => revealObserver.observe(item));
+
+    const stats = document.querySelectorAll('.stat-num[data-count]');
+    const formatNumber = (value, decimals) => {
+      const fixed = Number(value).toFixed(decimals);
+      const parts = fixed.split('.');
+      parts[0] = Number(parts[0]).toLocaleString('ja-JP');
+      return parts.join('.');
+    };
+
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const el = entry.target;
+        const target = Number(el.dataset.count);
+        const decimals = Number(el.dataset.decimals || 0);
+        const suffix = el.dataset.suffix || '';
+        const duration = 1100;
+        const start = performance.now();
+
+        const tick = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = `${formatNumber(target * eased, decimals)}${suffix}`;
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+
+        requestAnimationFrame(tick);
+        countObserver.unobserve(el);
+      });
+    }, { threshold: 0.8 });
+
+    stats.forEach((stat) => countObserver.observe(stat));
+  </script>
 </body>
 </html>
