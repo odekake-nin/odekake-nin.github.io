@@ -690,22 +690,22 @@
     .about-channel {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 42px 40px 104px;
+      padding: 42px 40px 96px;
       position: relative;
     }
 
     .about-panel {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(260px, 0.72fr);
-      gap: 40px;
+      grid-template-columns: minmax(0, 0.92fr) minmax(300px, 0.78fr);
+      gap: 56px;
       align-items: center;
-      padding: 34px;
+      padding: 50px;
       border: 1px solid rgba(15,143,95,0.14);
       border-radius: 8px;
       background:
-        radial-gradient(circle at 16% 12%, rgba(32,181,119,0.12), transparent 30%),
-        linear-gradient(135deg, #fff 0%, #f4fbf7 52%, #eef5ff 100%);
-      box-shadow: 0 28px 88px rgba(23,32,51,0.09);
+        radial-gradient(circle at 15% 8%, rgba(32,181,119,0.12), transparent 34%),
+        linear-gradient(135deg, #ffffff 0%, #f7fcf9 54%, #eef7f4 100%);
+      box-shadow: 0 30px 90px rgba(23,32,51,0.08);
       overflow: hidden;
       position: relative;
     }
@@ -713,11 +713,11 @@
     .about-panel::before {
       content: '';
       position: absolute;
-      left: 34px;
-      right: 34px;
+      left: 50px;
+      right: 50px;
       top: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent), #7adf9d, transparent);
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), #7adf9d 48%, transparent);
     }
 
     .about-copy {
@@ -726,19 +726,20 @@
     }
 
     .about-copy .section-sub {
-      margin-bottom: 24px;
+      margin-bottom: 28px;
+      max-width: 650px;
     }
 
     .about-avatar {
       display: inline-flex;
       align-items: center;
       gap: 14px;
-      padding: 10px 16px 10px 10px;
-      margin-bottom: 20px;
+      padding: 9px 16px 9px 9px;
+      margin-bottom: 24px;
       border-radius: 99px;
       background: rgba(255,255,255,0.82);
       border: 1px solid rgba(15,143,95,0.14);
-      box-shadow: 0 14px 38px rgba(23,32,51,0.08);
+      box-shadow: 0 14px 36px rgba(23,32,51,0.07);
     }
 
     .about-avatar img {
@@ -764,56 +765,10 @@
       letter-spacing: 0.08em;
     }
 
-    .format-switch {
-      display: grid;
-      gap: 14px;
-      background: transparent;
-    }
-
-    .media-proof {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 12px;
-      overflow: hidden;
-    }
-
-    .media-proof-item {
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.98), rgba(239,250,244,0.9));
-      border: 1px solid rgba(15,143,95,0.16);
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 16px 36px rgba(23,32,51,0.06);
-    }
-
-    .media-proof-item strong {
-      display: block;
-      color: var(--accent);
-      font-size: 2.65rem;
-      font-weight: 900;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .media-proof-item span {
-      display: block;
-      color: var(--navy);
-      font-size: 0.9rem;
-      font-weight: 900;
-      margin-bottom: 4px;
-    }
-
-    .media-proof-item small {
-      display: block;
-      color: var(--muted);
-      font-size: 0.72rem;
-      line-height: 1.55;
-    }
-
     .media-icons {
       display: flex;
       gap: 10px;
-      margin: 2px 0 12px;
+      margin: 0;
     }
 
     .media-icon {
@@ -887,67 +842,94 @@
       border-left: 7px solid #fff;
     }
 
-    .format-item {
+    .about-proof-line {
       display: grid;
-      grid-template-columns: 58px 1fr;
-      gap: 16px;
-      align-items: start;
-      background: rgba(255,255,255,0.92);
-      border: 1px solid rgba(15,143,95,0.12);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      max-width: 650px;
+      overflow: hidden;
+      border: 1px solid rgba(15,143,95,0.14);
       border-radius: 8px;
-      padding: 16px;
+      background: rgba(15,143,95,0.14);
+      box-shadow: 0 18px 44px rgba(23,32,51,0.06);
     }
 
-    .format-item b {
-      display: grid;
-      place-items: center;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      background: var(--accent-soft);
+    .proof-pill {
+      display: flex;
+      min-height: 86px;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      padding: 18px 20px;
+      background: rgba(255,255,255,0.9);
+    }
+
+    .proof-pill strong {
       color: var(--accent);
-      font-size: 1.85rem;
+      font-size: 1.8rem;
       font-weight: 900;
       line-height: 1;
+      letter-spacing: 0;
     }
 
-    .format-item strong {
-      display: block;
+    .proof-pill span {
       color: var(--navy);
-      font-size: 0.92rem;
-      margin-bottom: 5px;
-    }
-
-    .format-item span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.74rem;
-      line-height: 1.65;
-    }
-
-    .about-format-text {
-      color: var(--muted);
-      font-size: 0.84rem;
-      line-height: 1.85;
-      padding: 4px 2px 0;
-    }
-
-    .about-format-text strong {
-      color: var(--navy);
+      font-size: 0.82rem;
       font-weight: 900;
+      line-height: 1.45;
+    }
+
+    .proof-pill.is-icons {
+      gap: 12px;
+    }
+
+    .video-side {
+      position: relative;
+      z-index: 1;
+      justify-self: center;
+      width: min(360px, 100%);
+    }
+
+    .video-kicker {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: end;
+      margin-bottom: 14px;
+    }
+
+    .video-kicker span {
+      color: var(--accent);
+      font-size: 0.66rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+    }
+
+    .video-kicker strong {
+      display: block;
+      margin-top: 4px;
+      color: var(--navy);
+      font-size: 1.05rem;
+      line-height: 1.35;
+    }
+
+    .video-kicker b {
+      color: var(--accent);
+      font-size: 2.8rem;
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: 0;
     }
 
     .video-embed {
       position: relative;
-      z-index: 1;
-      width: min(320px, 100%);
+      width: min(330px, 100%);
+      margin: 0 auto;
       aspect-ratio: 9 / 16;
       border-radius: 26px;
       overflow: hidden;
-      background:
-        linear-gradient(180deg, rgba(5,10,18,0.06), rgba(5,10,18,0.42)),
-        linear-gradient(135deg, #0f8f5f, #111827 68%);
-      box-shadow: 0 28px 70px rgba(23,32,51,0.18);
+      background: #050812;
+      box-shadow: 0 30px 72px rgba(23,32,51,0.22);
       border: 10px solid #101827;
       justify-self: center;
     }
@@ -972,6 +954,7 @@
       border-radius: 99px;
       background: #050812;
       box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
+      z-index: 3;
     }
 
     .video-embed video {
@@ -984,77 +967,90 @@
       background: #050812;
     }
 
-    .video-side {
-      justify-self: center;
-      width: min(320px, 100%);
+    .video-play-hint {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 4;
+      display: grid;
+      place-items: center;
+      gap: 10px;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      color: #fff;
+      text-align: center;
+      transition: opacity 0.22s ease, transform 0.22s ease;
+    }
+
+    .video-embed.is-playing .video-play-hint {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.94);
+    }
+
+    .video-play-hint i {
+      display: grid;
+      place-items: center;
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 20px 44px rgba(0,0,0,0.34);
+    }
+
+    .video-play-hint i::before {
+      content: '';
+      margin-left: 5px;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 18px solid var(--accent);
+    }
+
+    .video-play-hint strong {
+      padding: 7px 12px;
+      border-radius: 99px;
+      background: rgba(6,12,22,0.68);
+      backdrop-filter: blur(10px);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
     }
 
     .video-caption-card {
       margin-top: 16px;
-      padding: 18px;
-      border-radius: 8px;
-      background:
-        radial-gradient(circle at 88% 0%, rgba(32,181,119,0.22), transparent 34%),
-        linear-gradient(135deg, #07101f, #102135);
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: 0 22px 54px rgba(23,32,51,0.18);
+      padding: 0;
+      background: transparent;
     }
 
     .video-caption-card strong {
       display: block;
-      color: #fff;
-      font-size: 0.84rem;
+      color: var(--navy);
+      font-size: 0.88rem;
       line-height: 1.55;
-      margin-bottom: 14px;
-    }
-
-    .performance-total {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      align-items: end;
-      gap: 12px;
-      margin-bottom: 14px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .performance-total b {
-      color: #35e39d;
-      font-size: 2.7rem;
-      font-weight: 900;
-      line-height: 0.95;
-      letter-spacing: 0;
-    }
-
-    .performance-total span {
-      color: rgba(255,255,255,0.82);
-      font-size: 0.78rem;
-      font-weight: 900;
-      line-height: 1.45;
+      margin-bottom: 12px;
     }
 
     .video-caption-stats {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 8px;
     }
 
     .video-caption-stats span {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 10px 12px;
+      display: grid;
+      gap: 2px;
+      padding: 11px 10px;
       border-radius: 8px;
-      background: rgba(255,255,255,0.08);
-      color: #fff;
-      font-size: 0.72rem;
+      background: rgba(15,143,95,0.08);
+      border: 1px solid rgba(15,143,95,0.12);
+      color: var(--accent);
+      font-size: 1rem;
       font-weight: 900;
+      line-height: 1.2;
     }
 
     .video-caption-stats span::before {
       content: attr(data-platform);
-      color: rgba(255,255,255,0.68);
+      color: var(--subtle);
       font-size: 0.62rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -2303,14 +2299,14 @@
       .stat-item:nth-child(odd) { border-right: 1px solid var(--line); }
       .stat-item:nth-last-child(-n+2) { border-bottom: none; }
       .about-channel { padding: 32px 24px 68px; }
-      .about-panel { grid-template-columns: 1fr; padding: 24px; gap: 26px; }
-      .format-switch { grid-template-columns: 1fr; }
-      .media-proof { grid-template-columns: 1fr; }
-      .format-item { grid-template-columns: 48px 1fr; gap: 12px; }
-      .format-item b { width: 48px; height: 48px; font-size: 1.5rem; }
+      .about-panel { grid-template-columns: 1fr; padding: 26px 22px; gap: 30px; }
+      .about-panel::before { left: 22px; right: 22px; }
+      .about-proof-line { grid-template-columns: 1fr; }
+      .proof-pill { min-height: auto; padding: 16px; }
+      .video-side { width: min(300px, 100%); }
+      .video-kicker b { font-size: 2.3rem; }
       .video-embed { width: min(280px, 100%); aspect-ratio: 9 / 16; }
-      .video-side { width: min(280px, 100%); }
-      .performance-total b { font-size: 2.25rem; }
+      .video-caption-stats { grid-template-columns: 1fr; }
       .section { padding: 68px 24px; }
       .platform-grid { grid-template-columns: 1fr; gap: 14px; }
       .process-band { grid-template-columns: 1fr; padding: 24px; gap: 22px; }
@@ -2475,44 +2471,44 @@
         <div class="section-label">ABOUT</div>
         <div class="section-title">必殺おでかけ人とは？</div>
         <div class="section-sub">「週末、どこへ行こう？」「何をしよう？」と悩む人に、思わず「ここに行きたい！」と思えるひらめきを、たった1分の動画で届けるお出かけメディアです。<br><br>何気なくSNSをスクロールしていた瞬間に、予定のない週末が楽しみな週末へ変わる。そんな行動のきっかけになる動画を、お店と一緒につくります。</div>
-        <div class="format-switch">
-          <div class="media-proof">
-            <div class="media-proof-item">
-              <strong>9万+</strong>
-              <span>SNS総フォロワー</span>
-              <small>必殺おでかけ人のアカウント群から、まだ知らないお客様へ届けます。</small>
-            </div>
-            <div class="media-proof-item">
-              <div class="media-icons" aria-hidden="true">
-                <span class="media-icon tiktok"></span>
-                <span class="media-icon insta"></span>
-                <span class="media-icon youtube"></span>
-              </div>
-              <span>3媒体で同時にPR</span>
-              <small>TikTok・Instagram・YouTubeへ展開し、それぞれ違うユーザー層に接触します。</small>
-            </div>
+        <div class="about-proof-line">
+          <div class="proof-pill">
+            <strong>9万+</strong>
+            <span>SNS総フォロワー</span>
           </div>
-          <div class="about-format-text">
-            通常投稿では、街の魅力やお出かけ先を<strong>「7選」形式</strong>で紹介しています。PR投稿では、お店の魅力がより自然に伝わるように、強みを絞った<strong>「5選」形式</strong>で紹介します。
+          <div class="proof-pill is-icons">
+            <div class="media-icons" aria-hidden="true">
+              <span class="media-icon tiktok"></span>
+              <span class="media-icon insta"></span>
+              <span class="media-icon youtube"></span>
+            </div>
+            <span>3媒体で同時PR</span>
           </div>
         </div>
       </div>
       <div class="video-side">
+        <div class="video-kicker">
+          <div>
+            <span>REPRESENTATIVE VIDEO</span>
+            <strong>代表動画の実績</strong>
+          </div>
+          <b>625万</b>
+        </div>
         <div class="video-embed" aria-label="縦型紹介動画">
-          <video controls playsinline preload="metadata">
+          <video controls playsinline preload="metadata" poster="assets/kanagawa-monster-ramen-7-poster.png">
             <source src="assets/kanagawa-monster-ramen-7.mp4" type="video/mp4">
           </video>
+          <div class="video-play-hint" aria-hidden="true">
+            <i></i>
+            <strong>クリックして再生</strong>
+          </div>
         </div>
         <div class="video-caption-card">
           <strong>行かないと一生後悔する！神奈川の怪物級に美味いラーメン店7選</strong>
-          <div class="performance-total">
-            <b>625万</b>
-            <span>3媒体合計再生<br>代表動画実績</span>
-          </div>
           <div class="video-caption-stats">
-            <span data-platform="Instagram">153万再生</span>
-            <span data-platform="TikTok">71万再生</span>
-            <span data-platform="YouTube">401万再生</span>
+            <span data-platform="Instagram">153万</span>
+            <span data-platform="TikTok">71万</span>
+            <span data-platform="YouTube">401万</span>
           </div>
         </div>
       </div>
@@ -2755,6 +2751,13 @@
     }, { threshold: 0.8 });
 
     stats.forEach((stat) => countObserver.observe(stat));
+
+    document.querySelectorAll('.video-embed video').forEach((video) => {
+      const frame = video.closest('.video-embed');
+      video.addEventListener('play', () => frame?.classList.add('is-playing'));
+      video.addEventListener('pause', () => frame?.classList.remove('is-playing'));
+      video.addEventListener('ended', () => frame?.classList.remove('is-playing'));
+    });
   </script>
 </body>
 </html>
