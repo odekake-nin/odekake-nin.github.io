@@ -1176,14 +1176,18 @@
     }
 
     .platform-card {
+      display: block;
       background: var(--paper);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 34px 30px 30px;
       text-align: left;
+      color: inherit;
+      text-decoration: none;
       box-shadow: 0 20px 70px rgba(23,32,51,0.08);
       position: relative;
       overflow: hidden;
+      cursor: pointer;
       transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
     }
 
@@ -1191,6 +1195,11 @@
       transform: translateY(-4px);
       box-shadow: var(--shadow-strong);
       border-color: rgba(15, 143, 95, 0.26);
+    }
+
+    .platform-card:focus-visible {
+      outline: 3px solid rgba(15,143,95,0.28);
+      outline-offset: 4px;
     }
 
     .platform-card::before {
@@ -2170,7 +2179,7 @@
     .flow-timeline {
       margin-top: 50px;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       border-top: 2px solid rgba(15,143,95,0.22);
       position: relative;
     }
@@ -2348,7 +2357,7 @@
   <header>
     <div class="logo">必殺おでかけ人</div>
     <nav>
-      <a href="https://www.instagram.com/hissatsu_odekake_nin/" target="_blank" class="nav-cta">PR相談</a>
+      <a href="https://www.instagram.com/hissatsu_odekake_nin?igsh=MXBqemNxcHpjb3FyeQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="nav-cta">PR相談</a>
     </nav>
   </header>
 
@@ -2359,7 +2368,7 @@
         <div class="hero-tag">PR MEDIA COMPANY</div>
         <h1><span class="line">まだ知らないお客様に、</span><span class="line"><em>低コスト</em>で届く</span><span class="line">PR動画を。</span></h1>
         <p>TikTok・Instagram・YouTubeで、お店の魅力を動画にして発信。<br>飲食店・ホテル・<span class="nowrap">お出かけスポット</span>の認知を、手軽に広げます。</p>
-        <a href="https://www.instagram.com/hissatsu_odekake_nin/" target="_blank" class="cta-btn">
+        <a href="https://www.instagram.com/hissatsu_odekake_nin?igsh=MXBqemNxcHpjb3FyeQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="cta-btn">
           PR案件のお問い合わせはこちら
         </a>
         <div class="hero-proof">
@@ -2524,30 +2533,30 @@
     <div class="section-sub">TikTok・Instagram・YouTubeの3プラットフォームに投稿できるのが最大の強みです。<br>それぞれのユーザー層に合わせて、お店の認知を一気に広げられます。</div>
 
     <div class="platform-grid">
-      <div class="platform-card tiktok">
+      <a class="platform-card tiktok" href="https://www.tiktok.com/@hissatsu_odekake_nin?_r=1&_t=ZS-948As4zFAN3" target="_blank" rel="noopener" aria-label="TikTokアカウントを開く">
         <div class="platform-logo" aria-label="TikTok"></div>
         <div class="platform-name">TikTok</div>
         <div class="platform-followers">3.6万</div>
         <div class="platform-unit">フォロワー</div>
         <div class="platform-meter" style="--value: 92%"><span></span></div>
         <div class="platform-desc">バズりやすいショート動画で<br>まだ知らない層への<br>爆発的な拡散が狙える</div>
-      </div>
-      <div class="platform-card insta">
+      </a>
+      <a class="platform-card insta" href="https://www.instagram.com/hissatsu_odekake_nin?igsh=MXBqemNxcHpjb3FyeQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagramアカウントを開く">
         <div class="platform-logo" aria-label="Instagram"></div>
         <div class="platform-name">Instagram</div>
         <div class="platform-followers">3.1万</div>
         <div class="platform-unit">フォロワー</div>
         <div class="platform-meter" style="--value: 82%"><span></span></div>
         <div class="platform-desc">おしゃれな雰囲気重視のユーザーに<br>リール動画でリーチ。<br>保存・シェアされやすい</div>
-      </div>
-      <div class="platform-card youtube">
+      </a>
+      <a class="platform-card youtube" href="https://youtube.com/@hissatsu_odekake_nin?si=Jw-xqlc1GCqqLJKT" target="_blank" rel="noopener" aria-label="YouTube Shortsアカウントを開く">
         <div class="platform-logo" aria-label="YouTube"></div>
         <div class="platform-name">YouTube</div>
         <div class="platform-followers">2.4万</div>
         <div class="platform-unit">チャンネル登録者</div>
         <div class="platform-meter" style="--value: 96%"><span></span></div>
         <div class="platform-desc">「行きたい」と検索するユーザーに<br>ショート動画で自然に訴求。<br>資産として残る</div>
-      </div>
+      </a>
     </div>
   </div>
 
@@ -2690,6 +2699,7 @@
         <div class="flow-node"><b>02</b><strong>内容のご提案</strong><span>動画の方向性・見せ方・お見積もりをご提示します。</span></div>
         <div class="flow-node"><b>03</b><strong>撮影・編集</strong><span>来店撮影または素材をもとに、ショート動画へ編集します。</span></div>
         <div class="flow-node"><b>04</b><strong>投稿・納品</strong><span>各SNSへ投稿し、投稿後のデータもご報告します。</span></div>
+        <div class="flow-node"><b>05</b><strong>ご請求書の送付</strong><span>月末締め翌月末払いにて請求書を送付いたします。到着次第ご確認いただけますと幸いです。</span></div>
       </div>
     </div>
   </div>
@@ -2698,7 +2708,7 @@
   <div class="cta-section reveal">
     <h2>まずはお気軽にDMください</h2>
     <p>飲食店・カフェ・ホテル・お出かけスポット、どんな業種でもお気軽にご相談ください。</p>
-    <a href="https://www.instagram.com/hissatsu_odekake_nin/" target="_blank" class="cta-btn">
+    <a href="https://www.instagram.com/hissatsu_odekake_nin?igsh=MXBqemNxcHpjb3FyeQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="cta-btn">
       Instagramで問い合わせる
     </a>
     <div class="cta-note">@hissatsu_odekake_nin へDMをお送りください</div>
