@@ -698,7 +698,7 @@
       display: grid;
       grid-template-columns: minmax(0, 0.92fr) minmax(300px, 0.78fr);
       gap: 56px;
-      align-items: center;
+      align-items: start;
       padding: 50px;
       border: 1px solid rgba(15,143,95,0.14);
       border-radius: 8px;
@@ -733,34 +733,36 @@
     .about-avatar {
       display: inline-flex;
       align-items: center;
-      gap: 14px;
-      padding: 9px 16px 9px 9px;
-      margin-bottom: 24px;
+      gap: 18px;
+      padding: 12px 24px 12px 12px;
+      margin-bottom: 32px;
       border-radius: 99px;
       background: rgba(255,255,255,0.82);
       border: 1px solid rgba(15,143,95,0.14);
-      box-shadow: 0 14px 36px rgba(23,32,51,0.07);
+      box-shadow: 0 18px 46px rgba(23,32,51,0.09);
     }
 
     .about-avatar img {
-      width: 46px;
-      height: 46px;
+      width: 68px;
+      height: 68px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid #fff;
+      border: 3px solid #fff;
+      box-shadow: 0 12px 28px rgba(15,143,95,0.18);
     }
 
     .about-avatar strong {
       color: var(--navy);
-      font-size: 0.98rem;
+      font-size: 1.24rem;
       line-height: 1.2;
+      font-weight: 900;
     }
 
     .about-avatar span {
       display: block;
-      margin-top: 2px;
+      margin-top: 5px;
       color: var(--subtle);
-      font-size: 0.62rem;
+      font-size: 0.7rem;
       font-weight: 900;
       letter-spacing: 0.08em;
     }
@@ -882,6 +884,45 @@
     .proof-pill.is-icons {
       gap: 12px;
       border-left: 1px solid rgba(15,143,95,0.12);
+    }
+
+    .about-method {
+      max-width: 650px;
+      margin-top: 34px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(15,143,95,0.13);
+      display: grid;
+      gap: 18px;
+    }
+
+    .about-method-row {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .about-method-row b {
+      color: var(--accent);
+      font-size: 2.6rem;
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: 0;
+    }
+
+    .about-method-row strong {
+      display: block;
+      color: var(--navy);
+      font-size: 0.98rem;
+      font-weight: 900;
+      margin-bottom: 5px;
+    }
+
+    .about-method-row span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.75;
     }
 
     .video-side {
@@ -2311,9 +2352,16 @@
       .about-channel { padding: 32px 24px 68px; }
       .about-panel { grid-template-columns: 1fr; padding: 26px 22px; gap: 30px; }
       .about-panel::before { left: 22px; right: 22px; }
+      .about-avatar { gap: 13px; padding: 10px 16px 10px 10px; margin-bottom: 24px; }
+      .about-avatar img { width: 52px; height: 52px; }
+      .about-avatar strong { font-size: 1rem; }
+      .about-avatar span { font-size: 0.62rem; }
       .about-proof-line { display: grid; grid-template-columns: 1fr; border-radius: 8px; padding: 0; gap: 0; }
       .proof-pill { min-height: auto; padding: 16px; justify-content: center; }
       .proof-pill.is-icons { border-left: none; border-top: 1px solid rgba(15,143,95,0.12); }
+      .about-method { margin-top: 24px; padding-top: 22px; gap: 14px; }
+      .about-method-row { grid-template-columns: 54px 1fr; gap: 14px; }
+      .about-method-row b { font-size: 2rem; }
       .video-side { width: min(300px, 100%); }
       .video-kicker b { font-size: 2.3rem; }
       .video-embed { width: min(280px, 100%); aspect-ratio: 9 / 16; }
@@ -2494,6 +2542,22 @@
               <span class="media-icon youtube"></span>
             </div>
             <span>3媒体で同時PR</span>
+          </div>
+        </div>
+        <div class="about-method">
+          <div class="about-method-row">
+            <b>7</b>
+            <div>
+              <strong>普段は「7選」で紹介</strong>
+              <span>保存・比較されやすい形式で、街の魅力やお出かけ先をわかりやすく届けています。</span>
+            </div>
+          </div>
+          <div class="about-method-row">
+            <b>5</b>
+            <div>
+              <strong>PRは「5選」で紹介</strong>
+              <span>お店の強みを絞り込み、見た人が自然に「行きたい」と思える動画に整えます。</span>
+            </div>
           </div>
         </div>
       </div>
