@@ -2357,17 +2357,21 @@
       .hero-inner { grid-template-columns: 1fr; gap: 28px; }
       .hero-copy {
         text-align: left;
-        max-width: 520px;
-        margin: 0 auto;
+        max-width: none;
+        width: 100%;
+        margin: 0;
       }
       .hero h1 {
-        font-size: clamp(2rem, 10vw, 2.8rem);
+        font-size: clamp(1.72rem, 8.6vw, 2.45rem);
         line-height: 1.08;
+        max-width: 100%;
+        overflow-wrap: anywhere;
       }
+      .hero h1 .line { white-space: normal; }
       .hero p {
         font-size: 0.92rem;
         margin: 16px 0 24px;
-        max-width: 38rem;
+        max-width: 100%;
       }
       .hero-proof { justify-content: flex-start; flex-wrap: wrap; gap: 8px; }
       .hero-proof span {
