@@ -2342,7 +2342,8 @@
       .hero-copy { text-align: center; }
       .hero p { font-size: 0.92rem; }
       .hero p { margin: 0 auto 30px; }
-      .hero-proof { justify-content: center; }
+      .hero-proof { justify-content: center; flex-wrap: wrap; gap: 8px; }
+      .hero-proof span { flex: 1 1 138px; min-width: 0; }
       .hero-visual { min-height: 410px; }
       .phone-mockup { width: min(238px, 70vw); }
       .phone-account { top: 76px; left: 16px; right: 16px; padding: 7px 9px; }
@@ -2383,7 +2384,21 @@
       .video-embed { width: min(280px, 100%); aspect-ratio: 9 / 16; }
       .video-caption-stats { grid-template-columns: 1fr; }
       .section { padding: 68px 24px; }
-      .platform-grid { grid-template-columns: 1fr; gap: 14px; }
+      .platform-grid {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(220px, 78vw);
+        grid-template-columns: none;
+        gap: 14px;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 10px;
+        margin-right: -24px;
+        padding-right: 24px;
+      }
+      .platform-card { scroll-snap-align: start; }
       .process-band { grid-template-columns: 1fr; padding: 24px; gap: 22px; }
       .process-line { grid-template-columns: 1fr; }
       .process-step { min-height: 128px; border-right: none; border-bottom: 1px solid rgba(15,143,95,0.11); }
@@ -2392,18 +2407,67 @@
       .delivery-item { border-right: none; border-bottom: 1px solid rgba(15,143,95,0.12); }
       .delivery-item:last-child { border-bottom: none; }
       .strength-grid { grid-template-columns: 1fr; gap: 14px; }
-      .proof-strip { grid-template-columns: 1fr; }
-      .proof-item { border-right: none; border-bottom: 1px solid rgba(15,143,95,0.12); padding: 28px 22px; }
-      .proof-item:last-child { border-bottom: none; }
+      .proof-strip {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(220px, 76vw);
+        grid-template-columns: none;
+        gap: 14px;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 10px;
+        margin-right: -24px;
+        padding-right: 24px;
+      }
+      .proof-item { scroll-snap-align: start; }
+      .proof-item { border-right: 1px solid rgba(15,143,95,0.12); border-bottom: none; padding: 28px 22px; }
+      .proof-item:last-child { border-right: none; }
       .why-bg { padding: 68px 24px; }
-      .compare-table { font-size: 0.78rem; }
+      .compare-table {
+        display: block;
+        width: 100%;
+        min-width: 620px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.78rem;
+      }
       .compare-table td, .compare-table th { padding: 10px 12px; }
       .pricing-card.featured { transform: none; }
       .pricing-offer { grid-template-columns: 1fr; }
       .pricing-main { padding: 30px 24px; }
-      .pricing-details { padding: 26px 22px; }
-      .pricing-row { grid-template-columns: 1fr; gap: 6px; }
-      .option-rail { grid-template-columns: 1fr; }
+      .pricing-details {
+        padding: 22px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .pricing-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 14px 14px 16px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        min-width: 0;
+      }
+      .pricing-row:last-child { padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+      .option-rail {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(220px, 78vw);
+        grid-template-columns: none;
+        gap: 12px;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 10px;
+        margin-right: -24px;
+        padding-right: 24px;
+      }
+      .option-item { scroll-snap-align: start; border-radius: 8px; }
       .flow-bg { padding: 68px 24px; }
       .flow-steps { grid-template-columns: 1fr; gap: 32px; }
       .flow-steps::before { display: none; }
