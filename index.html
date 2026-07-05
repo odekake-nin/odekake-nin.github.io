@@ -2446,29 +2446,22 @@
       .section-title { font-size: 1.55rem; line-height: 1.22; }
       .section-sub { margin-bottom: 28px; font-size: 0.86rem; }
       .platform-grid {
-        display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: minmax(240px, 82vw);
-        grid-template-columns: none;
+        grid-template-columns: 1fr;
         gap: 14px;
-        overflow-x: auto;
-        overscroll-behavior-x: contain;
-        scroll-snap-type: x proximity;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 10px;
-        margin-right: -16px;
-        padding-right: 16px;
+        overflow: visible;
+        margin-right: 0;
+        padding-right: 0;
       }
-      .platform-card { scroll-snap-align: start; padding: 28px 22px 24px; }
+      .platform-card { padding: 26px 22px 24px; }
       .platform-logo { width: 52px; height: 52px; }
       .platform-followers { font-size: 1.8rem; }
       .process-band { grid-template-columns: 1fr; padding: 20px 16px; gap: 20px; }
       .process-promise strong { font-size: 1.35rem; }
-      .process-line { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .process-line { grid-template-columns: 1fr; }
       .process-step {
-        min-height: 138px;
+        min-height: 128px;
         padding: 68px 12px 18px;
-        border-right: 1px solid rgba(15,143,95,0.11);
+        border-right: none;
         border-bottom: 1px solid rgba(15,143,95,0.11);
       }
       .process-step:last-child { border-bottom: none; }
@@ -2478,77 +2471,51 @@
       .delivery-item:last-child { border-bottom: none; }
       .strength-grid { grid-template-columns: 1fr; gap: 14px; }
       .proof-strip {
-        display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: minmax(240px, 82vw);
-        grid-template-columns: none;
-        gap: 14px;
-        overflow-x: auto;
-        overscroll-behavior-x: contain;
-        scroll-snap-type: x proximity;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 10px;
-        margin-right: -16px;
-        padding-right: 16px;
+        grid-template-columns: 1fr;
+        gap: 0;
+        overflow: visible;
+        margin-right: 0;
+        padding-right: 0;
       }
-      .proof-item { scroll-snap-align: start; }
-      .proof-item { border-right: 1px solid rgba(15,143,95,0.12); border-bottom: none; padding: 28px 22px; }
-      .proof-item:last-child { border-right: none; }
+      .proof-item { border-right: none; border-bottom: 1px solid rgba(15,143,95,0.12); padding: 26px 20px; }
+      .proof-item:last-child { border-bottom: none; }
       .why-bg { padding: 56px 16px; }
       .compare-table {
-        display: table;
+        display: block;
         width: 100%;
-        table-layout: fixed;
-        border-collapse: collapse;
-        font-size: 0.72rem;
-        overflow: hidden;
+        min-width: 620px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.78rem;
       }
-      .compare-table td,
-      .compare-table th {
-        padding: 8px 8px;
-        overflow-wrap: anywhere;
-        word-break: normal;
-      }
-      .compare-table th:first-child,
-      .compare-table td:first-child { width: 28%; }
-      .compare-table th:nth-child(2),
-      .compare-table td:nth-child(2) { width: 36%; }
-      .compare-table th:nth-child(3),
-      .compare-table td:nth-child(3) { width: 36%; }
+      .compare-table td, .compare-table th { padding: 10px 12px; }
       .pricing-card.featured { transform: none; }
       .pricing-offer { grid-template-columns: 1fr; }
       .pricing-main { padding: 28px 18px; }
       .pricing-details {
-        padding: 16px;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 10px;
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
       }
       .pricing-row {
         grid-template-columns: 1fr;
         gap: 6px;
-        padding: 12px 12px 14px;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: #fff;
+        padding: 14px 14px 16px;
+        border-bottom: 1px solid var(--line);
+        border-radius: 0;
+        background: transparent;
         min-width: 0;
       }
-      .pricing-row:last-child { padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+      .pricing-row:last-child { padding-bottom: 0; border-bottom: none; }
       .option-rail {
-        display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: minmax(240px, 82vw);
-        grid-template-columns: none;
-        gap: 12px;
-        overflow-x: auto;
-        overscroll-behavior-x: contain;
-        scroll-snap-type: x proximity;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 10px;
-        margin-right: -16px;
-        padding-right: 16px;
+        grid-template-columns: 1fr;
+        gap: 1px;
+        overflow: hidden;
+        margin-right: 0;
+        padding-right: 0;
       }
-      .option-item { scroll-snap-align: start; border-radius: 8px; }
+      .option-item { border-radius: 0; }
       .flow-bg { padding: 56px 16px; }
       .flow-steps { grid-template-columns: 1fr; gap: 24px; }
       .flow-steps::before { display: none; }
